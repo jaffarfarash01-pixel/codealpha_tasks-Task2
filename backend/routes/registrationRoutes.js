@@ -1,0 +1,1 @@
+const r=require("express").Router();const c=require("../controllers/registrationController");const protect=require("../middleware/authMiddleware");r.post("/:eventId",protect,c.registerForEvent);r.get("/my",protect,c.getMyRegistrations);r.delete("/:eventId",protect,c.cancelRegistration);module.exports=r;

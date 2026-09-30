@@ -1,0 +1,1 @@
+const r=require("express").Router();const c=require("../controllers/eventController");const protect=require("../middleware/authMiddleware");const organizer=require("../middleware/organizerMiddleware");r.get("/",c.getEvents);r.get("/:id",c.getEvent);r.post("/",protect,organizer,c.createEvent);module.exports=r;
